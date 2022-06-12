@@ -5,7 +5,10 @@
 #include "graph.h"
 #define MAXN 100
 
-void initGraph(GraphLnk *G)
+/*
+	Initialize the graph.
+**/
+void initGraph(GraphLnk *G)          
 {
 	G->maxn = MAXN;
 	G->cntE = 0;
@@ -18,6 +21,9 @@ void initGraph(GraphLnk *G)
 	}
 }
 
+/*
+	Insert a node into the graph.
+**/
 void insertNode(GraphLnk *G, const char *p)
 {
 	if(G->cntN >= G->maxn){
@@ -36,6 +42,9 @@ void insertNode(GraphLnk *G, const char *p)
 	}
 }
 
+/*
+	Get the node ID from the graph. 
+**/
 int getNode(GraphLnk *G, const char *p)
 {
 	int i;
@@ -46,13 +55,16 @@ int getNode(GraphLnk *G, const char *p)
 	return -1;
 }
 
+/*
+	Insert an edge into the graph
+**/
 void insertEdge(GraphLnk *G, const char *u, const char *v, double val)
 {
 	int from = getNode(G, u);
 	int to1 = getNode(G, v);
-	if(from == -1 || to1 == -1){
+	if(from == -1 || to1 == -1){          // something wrong because the node is not existent.
 		printf("Warning!The input is wrong.\nThe node is non-existent.");
-		exit(0);
+		exit(1);
 	}
 	Edge *E;
 	E = (Edge*)malloc(sizeof(Edge));
@@ -61,6 +73,6 @@ void insertEdge(GraphLnk *G, const char *u, const char *v, double val)
 	E->w = val;
 	E->link = G->tab[from].hed;
 	G->tab[from].hed = E;
-	G->cntE++; // need div 2
+	G->cntE++;
 }
 
