@@ -28,7 +28,7 @@ void insertNode(GraphLnk *G, const char *p)
 {
 	if(G->cntN >= G->maxn){
 		printf("Warning!The input is wrong.\nThe number of nodes is too much.");
-		exit(0);
+		exit(1);
 	}
 	int i, flag = 0;
 	for(i = 0; i < G->cntN; i++){
