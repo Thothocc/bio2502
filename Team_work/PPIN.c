@@ -28,7 +28,7 @@ int main(){
         if(flag == 2){
             printf("Input the interested protein name:\n");
             char pro[10]={0};
-            scanf("%s",pro);  //the original node
+            scanf("%s",pro); 
             int u = getNode(&G, pro);
             choice2(&G,u,dis);
         }
