@@ -22,7 +22,7 @@ void extract_data(GraphLnk *G)
 	if (NULL == fp)
 	{
 		printf("Warning! Read file fail!\n");
-		return;
+		exit(1);
         }
 	
 	//skip the first line
