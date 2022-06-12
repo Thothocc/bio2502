@@ -34,13 +34,13 @@ void choice2(GraphLnk *G, int u, double dis[100][100]){     //input a protein na
 void choice3(GraphLnk *G, int u, int v, double dis[100][100]) {     //input two protein names and display distance between them
     if(u == v){
         printf("Warning! The two inputs are the same protein.");
-        return;
+        exit(1);
     }
     if (dis[u][v] != 0x7fffffff) {
         printf("%s->", G->tab[u].name);
         printf("%s: %.3f\n", G->tab[v].name, dis[u][v]);
     }
-
+    
 }
 
 void ShowGraph(GraphLnk *G){        //show the graph
