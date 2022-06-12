@@ -57,11 +57,12 @@ void extract_data(GraphLnk *G)
         	row++;
 		
 		//insert the edge to the graph G
-        	insertEdge(G, name2, name1, w);
+        	insertEdge(G, name1, name2, w);
 		
 		//clear the buffer
 		memset(buffer, 0, sizeof(buffer));
         	memset(name1, 0, sizeof(name1));
         	memset(name2, 0, sizeof(name2));
     	}
+	fclose(fp);
 }
