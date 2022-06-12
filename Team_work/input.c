@@ -21,8 +21,8 @@ void extract_data(GraphLnk *G)
 	fp = fopen(path,"r");
 	if (NULL == fp)
 	{
-	printf("Warning! Read file fail!\n");
-	return;
+		printf("Warning! Read file fail!\n");
+		return;
         }
 	
 	//skip the first line
