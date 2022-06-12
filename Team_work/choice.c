@@ -3,7 +3,7 @@
 #include <string.h>
 #include "choice.h"
 
-void choice1(GraphLnk *G, double dis[100][100]){
+void choice1(GraphLnk *G, double dis[100][100]){    //display all protein-protein shortest distances
     int i, j;
     for(i = 0;i < G->cntN;i++){
         for(j = 0;j < G->cntN;j++){
@@ -18,7 +18,7 @@ void choice1(GraphLnk *G, double dis[100][100]){
     }
 }
 
-void choice2(GraphLnk *G, int u, double dis[100][100]){
+void choice2(GraphLnk *G, int u, double dis[100][100]){     //input a protein name and display all the shortest distance with it
     int v;
     for(v = 0; v < G->cntN; v++){
         if(u == v)
@@ -31,7 +31,7 @@ void choice2(GraphLnk *G, int u, double dis[100][100]){
     }
 }
 
-void choice3(GraphLnk *G, int u, int v, double dis[100][100]) {
+void choice3(GraphLnk *G, int u, int v, double dis[100][100]) {     //input two protein names and display distance between them
     if(u == v){
         printf("Warning! The two inputs are the same protein.");
         return;
@@ -43,7 +43,7 @@ void choice3(GraphLnk *G, int u, int v, double dis[100][100]) {
 
 }
 
-void ShowGraph(GraphLnk *G){
+void ShowGraph(GraphLnk *G){        //show the graph
     Edge *p;
     int i;
     for(i = 0;i < G->cntN;i++){
