@@ -16,6 +16,7 @@ int main(){
         dijkstra(&G, i, dis);
     }
 
+//Data input and processing via file
     int flag = 0;
     while(flag != 5){
         printf("choices:\n1:All protein-protein shortest distances\n2:Input one protein and output all shortest distances about it\n3:Choose two proteins and output the shortest distance\n4:Show protein list\n5:Exit\n");
@@ -46,6 +47,7 @@ int main(){
             printf("Warning! Undefined operation.");
         }
     }
+//Select different functions and work
     printf("Exit!\n");
     return 0;
 }
